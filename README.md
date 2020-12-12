@@ -1,4 +1,4 @@
-# ProjetoGetsao
+# ProjetoGestao
 Interface feita com PyQt5
 Existem 2 tipos de usuarios (Adm, User) Adm Tem acesso a todo o programa, User Tem acesso apenas ao que lhe foi permitido.
 Empresas que mechem com entregas podem usa para facilitar.
