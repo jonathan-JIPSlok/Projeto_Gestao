@@ -11,7 +11,7 @@ class Janela_Principal(QMainWindow): #Janela Principal
 		Db = Funcao.SQDB()
 		Lista = Db.cursor.execute("SELECT * FROM Usuarios")
 		if len(Lista.fetchall()) == 0:
-			self.CentralWidget = Window_Adm(('000000000', 'None'))
+			self.CentralWidget = Window_CadasterADM((929292020, 'PRIMEIRO LOGIN', 111111, 11111, 11111, '0', '0', '0', 'Adm'))
 		else:
 			self.CentralWidget = LoginWindow()
 		self.setCentralWidget(self.CentralWidget)
@@ -395,7 +395,9 @@ class Window_CadasterADM(QWidget):
 		self.Layout.addWidget(self.ButtonVoltar, 9, 0, 1, 2)
 
 		self.setLayout(self.Layout)
-		Janela.setCentralWidget(self)
+		try:
+		    Janela.setCentralWidget(self)
+		except: pass
 		setStyle(self)
 
 	def Voltar(self):
