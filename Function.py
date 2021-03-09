@@ -8,12 +8,12 @@ class SQDB(): #Funcoes com o banco de dados
         super().__init__()
 
         #Criando ou abrindo a pasta do banco de dados
-        Pasta = Path.home() / path_join("MyAppPasta")
+        Pasta = Path.home() / path_join("MyAppPastaJP")
         try:
             pastinha = Pasta.mkdir()
         except:
             pass
-        self.connection = sqlite3.connect(Pasta / 'Database.db')
+        self.connection = sqlite3.connect(Pasta / 'JestionApp.db')
         self.cursor = self.connection.cursor()
 
         self.CreateTables()
