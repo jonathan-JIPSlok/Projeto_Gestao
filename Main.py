@@ -11,7 +11,7 @@ class Janela_Principal(QMainWindow): #Janela Principal
 		Db = Funcao.SQDB()
 		Lista = Db.cursor.execute("SELECT * FROM Usuarios")
 		if len(Lista.fetchall()) == 0:
-			self.CentralWidget = Window_CadasterADM((929292020, 'PRIMEIRO LOGIN', 111111, 11111, 11111, '0', '0', '0', 'Adm'))
+			self.CentralWidget = Window_CadasterADM((1, 'PRIMEIRO LOGIN', 111111, 11111, 11111, '0', '0', '0', 'Adm'))
 		else:
 			self.CentralWidget = LoginWindow()
 		self.setCentralWidget(self.CentralWidget)
@@ -371,7 +371,10 @@ class Window_CadasterADM(QWidget):
 		self.Email.returnPressed.connect(lambda : self.Tel.setFocus())
 		self.Tel.returnPressed.connect(self.Cadastrar)
 		self.ButtonCadaster.clicked.connect(self.Cadastrar)
-		self.ButtonVoltar.clicked.connect(self.Voltar)
+		if self.User[0] > 1:
+		    self.ButtonVoltar.clicked.connect(self.Voltar)
+		else:
+		    self.ButtonVoltar.setText("")
 
 
 		self.Nome.setPlaceholderText("Nome Completo")
