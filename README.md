@@ -8,3 +8,9 @@
 * As Entregas tem o Status (**Em aberto**) Quando foi apenas cadastrada, (**Entregue**) Entregado já fez a Entrega, (**Endereço nao encontrado**) Entregador não encontrou o Endereço
 ***
 **Deve ser feito o cadastro de um _ADM_ para poder começar a utilizalo.**
+
+Bibliotecas utilizadas:
+    - SQLite3
+    - shelve
+    - PyQt5
+    
